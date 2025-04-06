@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>kiwwwwv | Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -39,7 +40,7 @@
     .cover {
       width: 446px;
       height: 144px;
-      background: url('https://media.discordapp.net/attachments/1240935268585046039/1356989678917517342/image.png?ex=67f32fdf&is=67f1de5f&hm=a0548cd36ce73711baf2c1244c8eb0dbb06d9d0239a97b35979c6287af277071&=&format=webp&quality=lossless&width=736&height=642') center/cover;
+      background: url('https://media.discordapp.net/attachments/1147930642668081233/1172139771393491065/GpHVfh7.gif?ex=67f3baba&is=67f2693a&hm=47b2acbbf6ec4f7e52339683cedf2e1c1e921b556a1058e0d4b901fb0c267a34&=&width=400&height=225') center/cover;
       position: relative;
     }
     .avatar {
@@ -198,9 +199,212 @@
     .youtube {
       background-color: #FF0000;
     }
+    /* สไตล์พื้นฐาน (Dark Mode) */
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+    
+    .card {
+      background-color: #1a1a1a;
+      transition: all 0.3s ease;
+    }
+    
+    .section {
+      background-color: #111;
+      transition: all 0.3s ease;
+    }
+    
+    .footer {
+      color: #888;
+      transition: all 0.3s ease;
+    }
+    
+    .handle {
+      color: #888;
+      transition: all 0.3s ease;
+    }
+    
+    /* สไตล์สำหรับ Light Mode */
+    body.light {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    body.light .card {
+      background-color: #ffffff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    body.light .section {
+      background-color: #eaeaea;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    body.light .avatar {
+      border-color: #ffffff;
+    }
+    
+    body.light .footer {
+      color: #555;
+    }
+    
+    body.light .handle {
+      color: #666;
+    }
+    
+    body.light .dark-mode-btn {
+      background-color: #e0e0e0;
+      color: #333;
+    }
+    
+    body.light .social-buttons .social-btn {
+      opacity: 0.9;
+    }
+    
+    /* ปรับสีของปุ่มและลิงก์ใน Light Mode */
+    body.light .footer a {
+      color: #9945ff;
+    }
+    
+    body.light .btn-play {
+      background-color: #ff69b4;
+      color: white;
+    }
+    
+    body.light .btn-play:hover {
+      background-color: #ff85c1;
+    }
+      /* แอนิเมชั่นสำหรับ fade-in เมื่อโหลดหน้าเว็บ */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInFromLeft {
+      from {
+        transform: translateX(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes popIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes floatAnimation {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+    /* ใส่แอนิเมชั่นให้กับองค์ประกอบต่างๆ */
+    .card {
+      animation: fadeIn 1s ease-out;
+    }
+    
+    .username {
+      animation: slideInFromLeft 0.8s ease-out 0.2s both;
+    }
+    
+    .handle {
+      animation: slideInFromLeft 0.8s ease-out 0.4s both;
+    }
+    
+    .avatar {
+      animation: popIn 0.8s ease-out 0.6s both;
+    }
+    
+    .section {
+      animation: slideInFromRight 0.8s ease-out;
+      animation-fill-mode: both;
+    }
+    
+    .section:nth-child(1) {
+      animation-delay: 0.6s;
+    }
+    
+    .section:nth-child(2) {
+      animation-delay: 0.8s;
+    }
+    
+    .section:nth-child(3) {
+      animation-delay: 1s;
+    }
+    
+    .social-buttons {
+      animation: fadeIn 1s ease-out 1.2s both;
+    }
+    
+    .social-btn:hover .social-icon {
+      animation: floatAnimation 1s infinite ease-in-out;
+    }
+    
+    /* เพิ่มแอนิเมชั่นสำหรับปุ่มดาร์กโหมด */
+    .dark-mode-btn {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    
+    .dark-mode-btn:hover {
+      transform: rotate(45deg);
+    }
+    
+    /* เพิ่มแอนิเมชั่นเมื่อ hover ที่ card */
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      transition: transform 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+    
+    /* เพิ่มการกระพริบเล็กน้อยให้กับไอคอนเพลง */
+    @keyframes pulse {
+      0% {
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.8;
+      }
+    }
+    
+    .music-icon svg {
+      animation: pulse 2s infinite ease-in-out;
+    }
   </style>
 </head>
 <body>
+  <div id="particles-js" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
   <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙</button>
   <div class="container">
     <div class="card">
@@ -297,14 +501,229 @@
       toggleSpotify(); // call twice to start with autoplay
     }
 
+      /* แทนที่ฟังก์ชันนี้ด้วยฟังก์ชันใหม่ */
     function toggleDarkMode() {
       const body = document.body;
-      body.classList.toggle("dark");
+      body.classList.toggle("light");
       const button = document.querySelector(".dark-mode-btn");
-      button.textContent = body.classList.contains("dark") ? "🌞" : "🌙";
-      body.style.backgroundColor = body.classList.contains("dark") ? "#fff" : "#0d0d0d";
-      body.style.color = body.classList.contains("dark") ? "#000" : "#fff";
+      
+      // เปลี่ยนไอคอนตามโหมด
+      button.textContent = body.classList.contains("light") ? "🌙" : "🌞";
+      
+      // บันทึกการตั้งค่าไว้ใน localStorage
+      if (body.classList.contains("light")) {
+        localStorage.setItem("theme", "light");
+      } else {
+        localStorage.setItem("theme", "dark");
+      }
     }
+    
+    /* แทนที่ window.onload เดิมด้วยฟังก์ชันใหม่ */
+    window.onload = function() {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.body.classList.add("light");
+        document.querySelector(".dark-mode-btn").textContent = "🌙";
+      } else {
+        document.querySelector(".dark-mode-btn").textContent = "🌞";
+      }
+      
+      // เรียกใช้ฟังก์ชันเปิดเพลงที่มีอยู่แล้ว
+      toggleSpotify();
+      toggleSpotify(); // call twice to start with autoplay
+    }
+      // เพิ่มแอนิเมชั่นให้กับเซ็กชั่นต่างๆ เมื่อเลื่อนหน้าจอ (เผื่อหน้าเว็บยาวขึ้น)
+    document.addEventListener('DOMContentLoaded', function() {
+      // ทำให้องค์ประกอบที่มี class="section" มีแอนิเมชั่นเมื่อเลื่อนเข้ามาในหน้าจอ
+      const sections = document.querySelectorAll('.section');
+      
+      // ฟังก์ชั่นตรวจสอบว่าองค์ประกอบอยู่ในหน้าจอหรือไม่
+      function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+      
+      // ฟังก์ชั่นตรวจสอบและเพิ่มคลาส animate
+      function checkScroll() {
+        sections.forEach(section => {
+          if (isElementInViewport(section)) {
+            section.style.opacity = "1";
+          }
+        });
+      }
+      
+      // เรียกใช้ฟังก์ชั่นเมื่อโหลดหน้าและเมื่อเลื่อนหน้าจอ
+      window.addEventListener('scroll', checkScroll);
+      window.addEventListener('resize', checkScroll);
+      checkScroll();
+      
+      // เพิ่มแอนิเมชั่นสุ่มให้กับไอคอนโซเชียล
+      const socialIcons = document.querySelectorAll('.social-icon');
+      
+      function randomAnimation() {
+        const randomIcon = socialIcons[Math.floor(Math.random() * socialIcons.length)];
+        randomIcon.style.animation = 'floatAnimation 1s ease-in-out';
+        
+        setTimeout(() => {
+          randomIcon.style.animation = '';
+        }, 1000);
+        
+        // สุ่มเวลาในการแสดงแอนิเมชั่นถัดไป
+        setTimeout(randomAnimation, 3000 + Math.random() * 2000);
+      }
+      
+      // เริ่มแอนิเมชั่นสุ่มหลังจากโหลดหน้าเว็บ
+      setTimeout(randomAnimation, 3000);
+    });
+      // คอนฟิกสำหรับ particles.js
+    document.addEventListener('DOMContentLoaded', function() {
+      // ตรวจสอบว่าเป็นโหมดมืดหรือสว่าง
+      const isLightMode = document.body.classList.contains('light');
+      
+      // กำหนดค่าสีของ particles ตามโหมด
+      const particleColor = isLightMode ? '#6d6d6d' : '#ffffff';
+      const particleOpacity = isLightMode ? 0.2 : 0.4;
+      
+      // กำหนดค่า particles
+      particlesJS('particles-js', {
+        "particles": {
+          "number": {
+            "value": 30,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": particleColor
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            }
+          },
+          "opacity": {
+            "value": particleOpacity,
+            "random": true,
+            "anim": {
+              "enable": true,
+              "speed": 0.5,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+              "enable": true,
+              "speed": 2,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": particleColor,
+            "opacity": 0.2,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 1,
+            "direction": "none",
+            "random": true,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 140,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });
+      
+      // อัพเดท particles เมื่อเปลี่ยนโหมด
+      const darkModeBtn = document.querySelector('.dark-mode-btn');
+      const originalToggleDarkMode = window.toggleDarkMode;
+      
+      window.toggleDarkMode = function() {
+        // เรียกใช้ฟังก์ชั่นเดิม
+        if (originalToggleDarkMode) {
+          originalToggleDarkMode();
+        }
+        
+        // อัพเดท particles ตามโหมดใหม่
+        setTimeout(function() {
+          const isLightMode = document.body.classList.contains('light');
+          const particleColor = isLightMode ? '#6d6d6d' : '#ffffff';
+          const particleOpacity = isLightMode ? 0.2 : 0.4;
+          
+          if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+            // อัพเดทค่าสีและค่าความโปร่งใส
+            window.pJSDom[0].pJS.particles.color.value = particleColor;
+            window.pJSDom[0].pJS.particles.line_linked.color = particleColor;
+            window.pJSDom[0].pJS.particles.opacity.value = particleOpacity;
+            
+            // รีเซ็ต particles
+            window.pJSDom[0].pJS.fn.particlesRefresh();
+          }
+        }, 100);
+      };
+    });
   </script>
 </body>
 </html>
