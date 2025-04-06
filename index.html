@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kiwwwwv | Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Kanit', sans-serif;
+    }
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background-color 0.3s ease;
+    }
+    .container {
+      margin: auto;
+      padding: 2rem;
+    }
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 420px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .cover {
+      width: 446px;
+      height: 144px;
+      background: url('https://media.discordapp.net/attachments/1240935268585046039/1356989678917517342/image.png?ex=67f32fdf&is=67f1de5f&hm=a0548cd36ce73711baf2c1244c8eb0dbb06d9d0239a97b35979c6287af277071&=&format=webp&quality=lossless&width=736&height=642') center/cover;
+      position: relative;
+    }
+    .avatar {
+      position: absolute;
+      bottom: -30px;
+      left: 10px;
+      width: 96px;
+      height: 96px;
+      border-radius: 60%;
+      border: 3px solid #1a1a1a;
+      background: url('https://media.discordapp.net/attachments/1240935268585046039/1356989678917517342/image.png?ex=67f32fdf&is=67f1de5f&hm=a0548cd36ce73711baf2c1244c8eb0dbb06d9d0239a97b35979c6287af277071&=&format=webp&quality=lossless&width=736&height=642') center/cover;
+    }
+    .content {
+      padding: 3rem 1.5rem 1.5rem 1.5rem;
+    }
+    .username {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    .handle {
+      color: #888;
+      margin-bottom: 0.5rem;
+    }
+    .section {
+      background-color: #111;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .section p {
+      font-size: 0.95rem;
+    }
+    .music-player {
+      margin-top: 1rem;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 2rem 1rem 1rem 1rem;
+      color: #888;
+    }
+    .footer a {
+      color: #aa69ff;
+      text-decoration: none;
+    }
+    iframe {
+      border-radius: 10px;
+      width: 100%;
+      height: 80px;
+      margin-top: 0.5rem;
+    }
+    .btn-play {
+      margin-top: 0.5rem;
+      padding: 0.4rem 1rem;
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .music-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px; /* Space between icon and text */
+    }
+
+    .music-icon svg {
+    width: 18px; /* Adjust the size of the icon */
+    height: 18px;
+    vertical-align: middle; /* Align the icon with the text */
+    position: relative;
+    top: -4px; /* Adjust the vertical position (up or down) */
+    left: 6x; /* Adjust the horizontal position (left or right) */
+    }
+    .btn-play:hover {
+      background-color: #ff85c1;
+    }
+    .dark-mode-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 0.5rem;
+      background-color: #333;
+      color: white;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button class="dark-mode-btn" onclick="toggleDarkMode()">🌙</button>
+  <div class="container">
+    <div class="card">
+      <div class="cover">
+        <div class="avatar"></div>
+      </div>
+      <div class="content">
+        <div class="username">kiwwwwv</div>
+        <div class="handle">kiwwwwv • He / Him</div>
+
+        <div class="section">
+          <p>เกี่ยวกับฉัน<br>สุดหห</p>
+        </div>
+
+        <div class="section">
+          <p>เป็นประชากรบนโลกตั้งแต่<br>16 กันยายน 2549</p>
+        </div>
+
+        <div class="section music-player">
+            <p><span class="music-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-audio-lines size-3"><path d="M2 10v3"></path><path d="M6 6v11"></path><path d="M10 3v18"></path><path d="M14 8v7"></path><path d="M18 5v13"></path><path d="M22 10v3"></path></svg></span> กำลังฟังเพลง<br><strong>Z9 - CURSE (รักใครไม่เป็น)</strong></p>
+            <iframe id="spotifyPlayer" style="border-radius:12px" src="https://open.spotify.com/embed/track/77rZWogLvZ2NOf248oMd6N?utm_source=generator&autoplay=1" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>          
+      </div>
+    </div>  
+  </div>
+  <div class="footer">
+    © 2025 <a href="#">kiwwwwv</a> My Bio by <a href="#">kiwwwwv</a><br>
+    <small>ติดต่อเขียนเว็บไซด์ / ติดต่อจ้างเขียนโปรแกรมต่าง ๆ</small>
+  </div>
+
+  <script>
+    let isPlaying = true;
+    const baseSrc = "https://open.spotify.com/embed/track/77rZWogLvZ2NOf248oMd6N?utm_source=generator";
+    const spotifyPlayer = document.getElementById('spotifyPlayer');
+
+    function toggleSpotify() {
+      if (!isPlaying) {
+        spotifyPlayer.src = baseSrc + "&autoplay=1";
+        isPlaying = true;
+      } else {
+        spotifyPlayer.src = baseSrc;
+        isPlaying = false;
+      }
+    }
+
+    // Auto play on load
+    window.onload = function() {
+      toggleSpotify();
+      toggleSpotify(); // call twice to start with autoplay
+    }
+
+    function toggleDarkMode() {
+      const body = document.body;
+      body.classList.toggle("dark");
+      const button = document.querySelector(".dark-mode-btn");
+      button.textContent = body.classList.contains("dark") ? "🌞" : "🌙";
+      body.style.backgroundColor = body.classList.contains("dark") ? "#fff" : "#0d0d0d";
+      body.style.color = body.classList.contains("dark") ? "#000" : "#fff";
+    }
+  </script>
+</body>
+</html>
